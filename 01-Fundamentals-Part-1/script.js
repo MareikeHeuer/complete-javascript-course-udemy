@@ -73,7 +73,7 @@ console.log(typeof null);
 /* 
 
 Let and Const are ES6, and Var is the old way of defining a variable
-*/
+
 
 let age = 30;
 age = 31;
@@ -89,3 +89,40 @@ job = 'teacher';
 // Also possible to omit keyword, but in this case JS creates a property on the global object
 lastName = 'Miller';
 console.log(lastName);
+
+*/
+
+//// BASIC OPERATORS ////
+
+// AARITHMETIC OPERATORS
+const now = 2037;
+const ageMell = now - 1990;
+const ageSarah = now - 2018;
+console.log(ageMell, ageSarah);
+
+console.log(ageMell * 2, ageMell / 10, 2 ** 3);
+
+const firstName = 'Sam';
+const lastName = 'Miller';
+console.log(firstName + ' ' + lastName); // Sam Miller
+
+// ASSIGNMENT OPERATORS
+// 2 operatos, * and =
+let x = 10 + 5; // 15
+x += 10; // x = x + 10
+console.log(x); // 25
+x *= 4; // x * 4
+console.log(x); // 100
+x++; // x = x + 1
+console.log(x); // 101
+x--; // x = x - 1
+console.log(x); // 100
+
+// COMPARISON OPERATORS
+console.log(ageMell > ageSarah); // > , <, >=, <=
+console.log(ageSarah >= 18); // true
+
+const isFullAge = ageSarah >= 18;
+
+// Operation DOES NOT proceed from left to right
+console.log(now - 1990 > now - 2018);
