@@ -43,7 +43,7 @@ Every value is an object or primitive type
  6. Symbol: Value that is unique and cannot be changed 
  7. BigInt: Larger integers than the number type can hold
 
-*/
+
 
 let javaScriptIsFun = true;
 console.log(javaScriptIsFun);
@@ -65,3 +65,27 @@ console.log(typeof year);
 
 // JS bug: returns object, but should return null
 console.log(typeof null);
+
+*/
+
+//// LET, CONST, AND VAR ////
+
+/* 
+
+Let and Const are ES6, and Var is the old way of defining a variable
+*/
+
+let age = 30;
+age = 31;
+
+// Cannot reassign const value
+const birthYear = 1991;
+birthYear = 1990;
+
+// Legacy
+var job = 'programmer';
+job = 'teacher';
+
+// Also possible to omit keyword, but in this case JS creates a property on the global object
+lastName = 'Miller';
+console.log(lastName);
