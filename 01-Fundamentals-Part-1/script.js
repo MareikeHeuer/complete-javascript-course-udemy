@@ -256,6 +256,7 @@ Your tasks:
 Hint: Use an if/else statement 😉 
 */
 
+/*
 const massMark = 78;
 const heightMark = 1.69;
 const massJohn = 92;
@@ -270,3 +271,30 @@ if (BMIMark > BMIJohn) {
 } else {
   console.log(`John's BMI (${BMIJohn}) is higher than Mark's! (${BMIMark})`);
 }
+*/
+
+//// TYPE CONVERSION AND COERCION ////
+
+// Type Conversion: Manually switching type
+
+const inputYear = '1991'; // String, not number, need to convert to number
+console.log(Number(inputYear));
+console.log(inputYear + 18); // string 199118
+
+console.log(Number('Mell')); // NaN (Not a number)
+console.log(typeof NaN); // number , but means an invalid number
+
+console.log(String(23));
+
+// Type Coersion: JS automatically converts types for us, hidden
+
+// Plus operator performs typr coersion to string
+console.log('I am ' + 23 + 'years old'); // I am 23 years old
+// Minus operator converts strings to numbers, so opposite of the plus operator
+console.log('23' - '10' - 3); // 10
+// Conversion to numbers
+console.log('23' * '2');
+
+let n = '1' + 1;
+n = n - 1;
+console.log(n); // 10
