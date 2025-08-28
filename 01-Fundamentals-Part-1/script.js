@@ -170,6 +170,8 @@ Test data:
 § Data 1: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m tall.
 § Data 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1.76 m tall.
 */
+
+/*
 const massMark = 78;
 const heightMark = 1.69;
 
@@ -181,3 +183,34 @@ BMIJohn = massJohn / (heightJohn * heightJohn);
 const markHigherBMI = BMIMark > BMIJohn;
 
 console.log(BMIMark, BMIJohn, markHigherBMI);
+*/
+
+//// STRINGS AND TEMPLATE LITERLAS ////
+
+const firstName = 'Sam';
+const job = 'teacher';
+const birthYear = 1991;
+const year = 2037;
+
+// String
+const sam =
+  "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
+console.log(sam);
+
+// Template Literal, much easier to use
+const samNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`;
+console.log(samNew);
+
+console.log(`Just a regular string...`);
+
+// Multiline strings
+console.log(
+  'String with \n\
+multiple \n\
+lines'
+);
+
+// No need \n\ for new line with template literal
+console.log(`String 
+multiple 
+lines`);
