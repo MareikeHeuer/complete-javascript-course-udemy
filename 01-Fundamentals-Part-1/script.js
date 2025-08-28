@@ -187,6 +187,7 @@ console.log(BMIMark, BMIJohn, markHigherBMI);
 
 //// STRINGS AND TEMPLATE LITERLAS ////
 
+/*
 const firstName = 'Sam';
 const job = 'teacher';
 const birthYear = 1991;
@@ -214,3 +215,30 @@ lines'
 console.log(`String 
 multiple 
 lines`);
+*/
+
+//// TAKING DECISIONS: IF/ELSE STATEMENTS
+
+/* 
+If else statement is an if/else control structure, because this allows us to have more control 
+over the way the code is execuded.
+
+*/
+const age = 15;
+
+if (age >= 18) {
+  console.log('Sarah can start driving license 🚗');
+} else {
+  const yearsLeft = 18 - age;
+  console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
+}
+
+const birthYear = 1991;
+let century = 20;
+
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+console.log(century);
