@@ -342,6 +342,8 @@ if (height) {
 
 //// EQUALITY OPERATORS: == vs. === ////
 
+/*
+
 // === Strict equality operator, only returns true when both valuea ar exactly the same
 const age = 18;
 if (age === 18) console.log('You just became an adult :D');
@@ -365,3 +367,20 @@ if (favourite == 23) {
 if (favourite !== 23) {
   console.log('Why not 23?');
 }
+*/
+
+//// BOOLEAN LOGIC ////
+
+/*
+A: Sarah has adriver's lisence
+B: Sarah has good vision
+
+1. AND Operator returns true if both are true 
+A === true && B === true
+
+2. OR Operator returns true if one condition is true
+A === true || B === false
+
+3. NOT Operator inverts true/false value
+If A not true, it converts to false and vice versa
+*/
