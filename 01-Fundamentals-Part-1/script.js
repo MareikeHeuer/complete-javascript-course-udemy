@@ -384,3 +384,35 @@ A === true || B === false
 3. NOT Operator inverts true/false value
 If A not true, it converts to false and vice versa
 */
+
+//// LOGICAL OPERATORS ////
+
+/*
+const hasDriversLicense = true; // A
+const hasGoodVision = false; // B
+
+// AND operator
+console.log(hasDriversLicense && hasGoodVision); // false
+// OR operator
+console.log(hasDriversLicense || hasGoodVision); // true
+// NOT operator
+console.log(!hasDriversLicense); // false
+
+// if (hasDriversLicense && hasGoodVision) {
+//   console.log('Sarah is able to drive!');
+// } else {
+//   console.log('Someone else should drive..');
+// }
+*/
+
+const hasDriversLicense = true; // A
+const hasGoodVision = true; // B
+const isTired = true; // C
+
+console.log(hasDriversLicense && hasGoodVision && isTired); // false
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+  console.log('Sarah is able to drive!');
+} else {
+  console.log('Someone else should drive..');
+} // console log someone else should drive
