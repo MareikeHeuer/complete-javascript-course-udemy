@@ -309,11 +309,13 @@ console.log(n); // 10
 Not false initially, but will be converted to false when turned to boolean
 */
 
+/*
 console.log(Boolean(0)); // false
 console.log(Boolean(undefined)); // false
 console.log(Boolean('Mell')); // true
 console.log(Boolean({})); // true
 console.log(Boolean('')); // false
+*/
 
 /* 
 JS does type coercion in 2 scenarios
@@ -321,6 +323,7 @@ JS does type coercion in 2 scenarios
  2. In logical condition, like if else statements 
 */
 
+/*
 const money = 0;
 if (money) {
   // 0 is falsy
@@ -334,4 +337,31 @@ if (height) {
   console.log('YAY! Height is defined');
 } else {
   console.log('Height is UNDEEFINED!'); // This block is executed
+}
+*/
+
+//// EQUALITY OPERATORS: == vs. === ////
+
+// === Strict equality operator, only returns true when both valuea ar exactly the same
+const age = 18;
+if (age === 18) console.log('You just became an adult :D');
+
+// == Loose equality oeprator, performs type coercion
+if (age == '18') console.log('You just became an adult :D'); // true
+// Can introduce bugs, so if possible, avoid using loose equality operator
+
+const favourite = prompt("What's your favorite number?");
+console.log(typeof favourite); // string
+
+if (favourite == 23) {
+  console.log('Cool! 23 is an amazing number!');
+} else if (favourite === 7) {
+  console.log('7 is also a cool number');
+} else {
+  console.log('Number is not 23 or 7');
+}
+
+// strict version !==  loose version !=
+if (favourite !== 23) {
+  console.log('Why not 23?');
 }
