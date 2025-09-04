@@ -277,6 +277,8 @@ if (BMIMark > BMIJohn) {
 
 // Type Conversion: Manually switching type
 
+/*
+
 const inputYear = '1991'; // String, not number, need to convert to number
 console.log(Number(inputYear));
 console.log(inputYear + 18); // string 199118
@@ -298,3 +300,38 @@ console.log('23' * '2');
 let n = '1' + 1;
 n = n - 1;
 console.log(n); // 10
+*/
+
+//// TRUTHY AND FALSY VALUES ////
+
+/* 
+5 falsy values: 0, '', undefined, null, NaN
+Not false initially, but will be converted to false when turned to boolean
+*/
+
+console.log(Boolean(0)); // false
+console.log(Boolean(undefined)); // false
+console.log(Boolean('Mell')); // true
+console.log(Boolean({})); // true
+console.log(Boolean('')); // false
+
+/* 
+JS does type coercion in 2 scenarios
+ 1. Whhen using logical operators
+ 2. In logical condition, like if else statements 
+*/
+
+const money = 0;
+if (money) {
+  // 0 is falsy
+  console.log("Don't spend it all :)");
+} else {
+  console.log('You should get a jon!'); // console logs this, JS will convert any value to a boolean
+}
+
+let height; // height is undefined, no value assigned, falsy
+if (height) {
+  console.log('YAY! Height is defined');
+} else {
+  console.log('Height is UNDEEFINED!'); // This block is executed
+}
