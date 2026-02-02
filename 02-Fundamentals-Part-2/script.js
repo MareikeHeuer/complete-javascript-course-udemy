@@ -72,6 +72,8 @@ We can call function declarations before they're defined in the code
  */
 
 // Function declaration to calcualte age based on birthyear
+
+/*
 //const age1 = calcAge1(1991);
 
 function calcAge1(birthYear) {
@@ -94,3 +96,32 @@ Which of these two to use when writing code? Preference
 Function expression forces you to write more structured code, 
 because of having to declare function on top of the file 
 */
+
+//// ARROW FUNCTIONS ////
+
+/*
+Arrow function is a special form of function expression that is shorter and faster to write
+ */
+
+const calcAge2 = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+// Arrow version: Value will automatically be returned without needing return keyword
+// Good for one liner functions
+const calcAge3 = (birthYear) => 2037 - birthYear;
+const age3 = calcAge3(1991);
+console.log(age3);
+
+// Longer arrow function
+const yearsUntilRetirement = (birthYear, firstName) => {
+  const age = 2037 - birthYear;
+  const retirement = 65 - age;
+  //   return retirement;
+  return `${firstName} retires in ${retirement} years.`;
+};
+
+console.log(yearsUntilRetirement(1991, 'Jonas'));
+console.log(yearsUntilRetirement(1980, 'Bob'));
+
+// Arrow functions don't get a THIS keyword, will be learned later
