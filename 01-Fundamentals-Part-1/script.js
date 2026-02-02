@@ -485,6 +485,7 @@ if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
 // Alternative way of writing a complicated if else statement when al we want to do is compare one value to multiple different options
 // Weekday variable with different acttivities, map one activity to each day
 
+/* 
 const day = 'monday';
 
 switch (day) {
@@ -524,3 +525,21 @@ if (day === 'monday') {
 } else {
   console.log('Not a valid day!');
 }
+*/
+
+//// STATEMENTS AND EXPRESSIONS ////
+
+// Expression: Piece of code that produces a value
+// Examples
+3 + 4;
+1991;
+true && false && !false;
+
+// Statement: A bigger piece of code that is executed and doesn't produce a value
+// Exampels
+if (23 > 10) {
+  const str = '23 is bigger';
+}
+
+const me = 'Mell';
+console.log(`I'm ${2037 - 1990} years old ${me}`);
