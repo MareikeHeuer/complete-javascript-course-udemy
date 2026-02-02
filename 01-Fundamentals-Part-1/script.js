@@ -529,6 +529,7 @@ if (day === 'monday') {
 
 //// STATEMENTS AND EXPRESSIONS ////
 
+/*
 // Expression: Piece of code that produces a value
 // Examples
 3 + 4;
@@ -543,3 +544,27 @@ if (23 > 10) {
 
 const me = 'Mell';
 console.log(`I'm ${2037 - 1990} years old ${me}`);
+*/
+
+//// THE CONDITIONAL (TERNARY) OPERATOR ////
+
+// The conditional operator allows us to write somthing similar like an if else statement, but all in one line
+
+const age = 23;
+age >= 18
+  ? console.log('I love to drink wine 🍷')
+  : console.log('I love to drink water 💧');
+
+const drink = age >= 18 ? 'wine 🍷' : 'water 💧';
+console.log(drink);
+
+let drink2;
+if (age >= 18) {
+  drink2 = 'wine 🍷';
+} else {
+  drink2 = 'water 💧';
+}
+
+console.log(drink2);
+
+console.log(`I like to drink ${age >= 18 ? 'wine 🍷' : 'water 💧'}`);
