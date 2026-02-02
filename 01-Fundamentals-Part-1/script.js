@@ -591,7 +591,7 @@ HINT: To calculate 20% of a value, simply multiply it by 20/100 = 0.2
 HINT 2: Value X is between 50 and 300, if it's >= 50 && <= 300 😉
 */
 
-//// 1
+/*
 const bill = 40;
 
 const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
@@ -599,3 +599,28 @@ const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 console.log(
   `The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`,
 );
+*/
+
+//// JAVASCRIPT RELEEASES ES5, ES6+ and ESNEXT ////
+
+/*
+
+- 1995: Brenden Eich creates very first version of JS in just 10 days 
+        Was called MediaSourceHandle, but already had many fundamental features of modern JS
+
+- 2009: ES5, fully supported in all modern browsers (down to IE 9 from 2011)
+- 2015: ES6, the biggest udate to the language ever, modern JS
+        No support in older browsers, can ust most features in production with transpiling and poltfilling
+
+
+BACKWARDS COMPATIBILITY: DON'T BREAK THE WEB
+
+- Modern JS is able to understand old code, but not other way around 
+
+HOW TO USE JAVASCRIPT TODAY?
+
+Consider 2 scenarios
+- Development: Simply use the latest Google Chromwe Version 
+- Production: Use Babel to transpile and polyfill your code 
+(converting back to ES5 to ensure browser compatibility for all users)
+*/
