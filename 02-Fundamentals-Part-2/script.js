@@ -24,6 +24,7 @@ Fuction is a piece of code we can use over and over again
 A function can hold one or more complete lines of code 
 */
 
+/*
 function logger() {
   console.log('My name is Mell');
 }
@@ -45,7 +46,7 @@ Result of calling function will be juice value that was just returned
 This needs to be saved, in this case to the appleJuice variable
 
 Functions are perfect for DRY (Do Not repeat). because they are reusable code blocks that make up the application
-*/
+
 
 const appleJuice = fruitProcessor(5, 0);
 console.log(appleJuice);
@@ -57,3 +58,39 @@ const appleOrangeJuice = fruitProcessor(2, 4);
 console.log(appleOrangeJuice);
 
 const num = Number('23');
+*/
+
+//// FUNCTION DECLARATIONS VS. EXPRESSIONS
+
+/*
+Function Declaration: Using function keyword to declare a function
+Function Expression: Storing function in a variable
+Function is a value, that's why we can store it in a variable
+
+Difference between the two:
+We can call function declarations before they're defined in the code 
+ */
+
+// Function declaration to calcualte age based on birthyear
+//const age1 = calcAge1(1991);
+
+function calcAge1(birthYear) {
+  return 2037 - birthYear;
+}
+
+const age1 = calcAge1(1991);
+
+// Function expression
+const calcAge2 = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+const age2 = calcAge2(1991);
+
+console.log(age1, age2);
+
+/* 
+Which of these two to use when writing code? Preference 
+Function expression forces you to write more structured code, 
+because of having to declare function on top of the file 
+*/
