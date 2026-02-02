@@ -103,6 +103,7 @@ because of having to declare function on top of the file
 Arrow function is a special form of function expression that is shorter and faster to write
  */
 
+/*
 const calcAge2 = function (birthYear) {
   return 2037 - birthYear;
 };
@@ -125,3 +126,30 @@ console.log(yearsUntilRetirement(1991, 'Jonas'));
 console.log(yearsUntilRetirement(1980, 'Bob'));
 
 // Arrow functions don't get a THIS keyword, will be learned later
+*/
+
+//// FUNCTIONS CALLING OTHER FUNCTIONS ////
+/*
+Calling functions inside another function
+
+Fruit Processor can only make juice with smaller fruit pieces
+Need a machiine that will cut the fruits into smaller pieces
+
+Very common for one function to call another 
+Good example of DRY
+Separate functionalities 
+*/
+
+function cutFruitPieces(fruit) {
+  return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges) {
+  const applePieces = cutFruitPieces(apples);
+  const orangePieces = cutFruitPieces(oranges);
+
+  const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of oranges.`;
+  return juice;
+}
+
+console.log(fruitProcessor(2, 3));
