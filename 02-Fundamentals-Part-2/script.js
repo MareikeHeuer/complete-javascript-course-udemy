@@ -248,6 +248,7 @@ Array is like a big container into which we can throw variables and alter refere
 2 most important data strutures in JS are Arrays and Objects
 */
 
+/*
 const friend1 = 'Michael';
 const friend2 = 'Steven';
 const friend3 = 'Peter';
@@ -294,3 +295,45 @@ const ages = [
   calcAge(years[years.length - 1]),
 ];
 console.log(ages);
+*/
+
+//// BASIC ARRAY OPERATIONS (METHODS ////
+
+/*
+JS has methods: built in functions we can use for arrays
+ */
+
+const friends = ['Michael', 'Steven', 'Peter'];
+
+// Push adds elements to the ends of and array
+const newLength = friends.push('Jay');
+console.log(friends);
+console.log(newLength);
+
+// Unshift adds element to the beginnign of an awway
+friends.unshift('John');
+console.log(friends);
+
+// Pop removes last element of the array
+friends.pop();
+const popped = friends.pop();
+console.log(popped);
+console.log(friends);
+
+// Shift removes first element of the array
+friends.shift();
+console.log(friends);
+
+// Find position of element in array
+console.log(friends.indexOf('Steven')); // 1
+console.log(friends.indexOf('Bob')); // -1
+
+// ES6 methods, includes, will return true if element is in the array and false if not
+friends.push(23);
+console.log(friends.includes('Steven')); // true
+console.log(friends.includes('Bob')); // false
+console.log(friends.includes('23')); // false, no type coersion here, tests for exact value
+
+if (friends.includes('Steven')) {
+  console.log('You have a friend called Steven');
+}
