@@ -381,6 +381,8 @@ For objects the order of these values doesn't matter when retrieving them
 */
 
 // Object literal syntax, writing thw object down
+
+/*
 const jonas = {
   firstName: 'Jonas',
   lastName: 'Schmedtmann',
@@ -388,3 +390,59 @@ const jonas = {
   job: 'teacher',
   friends: ['Michael', 'Peter', 'Steven'],
 };
+*/
+
+//// DOT VS. BRACKET NOTATION ////
+
+/*
+Learn how to retrieve or change data using dot and bracket notation
+ */
+
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Schmedtmann',
+  age: 2037 - 1991,
+  job: 'teacher',
+  friends: ['Michael', 'Peter', 'Steven'],
+};
+
+console.log(jonas);
+
+// Getting object property value through dot notation
+console.log(jonas.lastName);
+
+// Getting object property value with bracket notation
+console.log(jonas['lastName']);
+// inside [] we can use any expression we like
+const nameKey = 'Name';
+console.log(jonas['first' + nameKey]);
+console.log(jonas['last' + nameKey]);
+
+// Another example with bracket notation
+// We don't know yet which property we want to use
+const interestedIn = prompt(
+  'What do you want to know about Jonas? Choose between firstName, lastName, age, jon, and friends.',
+);
+
+if (jonas[interestedIn]) {
+  console.log(jonas[interestedIn]);
+} else {
+  console.log(
+    'Wrong request! Choose between firstName, lastName, age, jon, and friends.',
+  );
+}
+
+// Add new properties using dot notation
+jonas.location = 'Portugal';
+
+// Add new properties using bracket notation
+jonas['twitter'] = '@jonasschmedtman';
+
+console.log(jonas);
+
+// Challenge: Write a sentence in a dynamic way
+// "Jonas has 3 friends, and his best friend is called Michael"
+
+console.log(
+  `${jonas.firstName} has three ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`,
+);
