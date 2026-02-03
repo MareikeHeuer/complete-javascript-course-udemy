@@ -398,6 +398,7 @@ const jonas = {
 Learn how to retrieve or change data using dot and bracket notation
  */
 
+/*
 const jonas = {
   firstName: 'Jonas',
   lastName: 'Schmedtmann',
@@ -446,3 +447,48 @@ console.log(jonas);
 console.log(
   `${jonas.firstName} has three ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`,
 );
+*/
+
+//// OBJECT METHODS ////
+/*
+Objects can hold different types of data, even arrays and objects
+Also functions as values
+*/
+
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Schmedtmann',
+  birthYear: 1991,
+  job: 'teacher',
+  friends: ['Michael', 'Peter', 'Steven'],
+  hasDriversLicence: true,
+
+  //   calcAge: function (birthYear) {
+  //     return 2037 - birthYear;
+  //   },
+
+  //   calcAge: function () {
+  //     // console.log(this);
+  //     return 2037 - this.birthYear;
+  //   },
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear; // this creates new property age
+    return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicence ? 'a' : 'no'} drivers lisence.`;
+  },
+};
+
+// console.log(jonas.calcAge()); // Need to call only once
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+
+// console.log(jonas['calcAge'](1991));
+
+// Challende: Write a method called getSummary, should return a string which should summarize the data about jonas
+// 'Jonas is a 46 years old teacher, and he has a drivers lisence.'
+console.log(jonas.getSummary());
