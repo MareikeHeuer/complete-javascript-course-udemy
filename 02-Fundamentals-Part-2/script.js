@@ -357,6 +357,7 @@ BONUS: Create an array totals containing the total values, so the bill + tip.
 TEST DATA: 125, 555, and 44.
 */
 
+/*
 const calcTip = function (bill) {
   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 };
@@ -368,3 +369,22 @@ console.log(tips, bills);
 
 const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(totals);
+*/
+
+//// INTRODUCTION TO OBJECTS ////
+/*
+In objects are defined by key value pairs
+Jonas object has 5 properties with 5 values
+
+Difference between objects and arrays:
+For objects the order of these values doesn't matter when retrieving them
+*/
+
+// Object literal syntax, writing thw object down
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Schmedtmann',
+  age: 2037 - 1991,
+  job: 'teacher',
+  friends: ['Michael', 'Peter', 'Steven'],
+};
