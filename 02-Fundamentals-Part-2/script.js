@@ -219,6 +219,7 @@ TEST DATA 2: Dolphins scored 85, 54, and 41. Koalas scored 23, 34, and 27.
 👋 OPTIONAL: You can watch my solution in video format in the next lecture
 */
 
+/*
 const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 
 let scoreDolphins = calcAverage(44, 23, 71);
@@ -238,3 +239,58 @@ scoreDolphins = calcAverage(85, 54, 41);
 scoreKoalas = calcAverage(23, 34, 27);
 console.log(checkWinner(scoreDolphins, scoreKoalas));
 console.log(checkWinner(576, 111));
+*/
+
+//// INTRODUCTION TO ARRAYS ////
+/*
+Data structure, store friends names in a variable
+Array is like a big container into which we can throw variables and alter reference them
+2 most important data strutures in JS are Arrays and Objects
+*/
+
+const friend1 = 'Michael';
+const friend2 = 'Steven';
+const friend3 = 'Peter';
+
+const friends = ['Michael', 'Steven', 'Peter'];
+console.log(friends);
+
+const y = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[1]);
+
+console.log(friends.length);
+// get last item of the array
+console.log(friends[friends.length - 1]);
+
+// Able to change element of array, only primitive values are immutable once declared with const
+// Arrays however are mutable, not primive type
+friends[2] = 'Jay';
+console.log(friends);
+
+// Array with different data types
+const firstName = 'Jonas';
+const jonas = [firstName, 'Schmedtmann', 2037 - 1991, 'teacher', friends];
+console.log(jonas);
+console.log(jonas.length);
+
+// Exercise
+// Array of birthYears, want to calculate the ages for some of them
+const calcAge = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+const years = [1990, 1967, 2002, 2010, 2018];
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+
+console.log(age1, age2, age3);
+
+const ages = [
+  calcAge(years[0]),
+  calcAge(years[1]),
+  calcAge(years[years.length - 1]),
+];
+console.log(ages);
