@@ -568,6 +568,62 @@ Eg: Gym, 10 repetitions of certain exercise, can be represented by a loop
 // 1: Initial value of counter,
 // 2: Logical condition evaluated before each iteration of the loop, loop runs while condition is true
 // 3. Increasing the counter after each iteration
+/*
 for (let rep = 1; rep <= 10; rep++) {
   console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+}
+*/
+
+//// LOOPING ARRAYS, BREAKING AND CONTINUING ////
+/*
+Explore more features of the for loop 
+ */
+
+const jonas = [
+  'Jonas',
+  'Schmedtmann',
+  2037 - 1991,
+  'teacher',
+  ['Michael', 'Peter', 'Steven'],
+  true,
+];
+
+const types = [];
+
+// Log every element of the array
+for (let i = 0; i < jonas.length; i++) {
+  // Create new array which logs each element type of jonas array
+  //   types[i] = typeof jonas[i];
+  types.push([typeof jonas[i]]);
+  console.log(types);
+  console.log(jonas[i], typeof jonas[i]);
+}
+
+// Array of birthYears
+// Calcualte the ages for all brithYears and store them in a new array
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  const birthYear = 2037 - years[i];
+  ages.push(birthYear);
+}
+
+console.log('ages', ages);
+
+// 2 important statement for loops: Continue & Break
+
+// Continue: Exit the current iteration of the loop and continue to next one
+console.log('----ONLY STRINGS----');
+for (let i = 0; i < jonas.length; i++) {
+  if (typeof jonas[i] !== 'string') continue;
+  console.log(jonas[i], typeof jonas[i]); // All element with type stirng will be logged to the console
+}
+
+// Break: Terminate the whole loop
+// Log no other eleemnt after we found a number
+console.log('----BREAK WITH NUMBER----');
+for (let i = 0; i < jonas.length; i++) {
+  if (typeof jonas[i] === 'number') break;
+  console.log(jonas[i], typeof jonas[i]);
 }
