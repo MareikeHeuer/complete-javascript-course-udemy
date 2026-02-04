@@ -579,6 +579,7 @@ for (let rep = 1; rep <= 10; rep++) {
 Explore more features of the for loop 
  */
 
+/*
 const jonas = [
   'Jonas',
   'Schmedtmann',
@@ -626,4 +627,33 @@ console.log('----BREAK WITH NUMBER----');
 for (let i = 0; i < jonas.length; i++) {
   if (typeof jonas[i] === 'number') break;
   console.log(jonas[i], typeof jonas[i]);
+}
+*/
+
+//// LOOPING BACKWARDS & LOOPS IN LOOPS ////
+/*
+1. Loop over array backwards
+2. Create loop in another loop
+*/
+
+const jonas = [
+  'Jonas',
+  'Schmedtmann',
+  2037 - 1991,
+  'teacher',
+  ['Michael', 'Peter', 'Steven'],
+  true,
+];
+
+// Log all items of the array backwards
+for (let i = jonas.length - 1; i >= 0; i--) {
+  console.log(jonas[i]), jonas[i];
+}
+
+// Loop inside a loop, 3 exercises 5 times, 3 reps 5 of each exercises
+for (let exercise = 1; exercise <= 3; exercise++) {
+  console.log(`------Starting exercise ${exercise}`);
+  for (let rep = 1; rep <= 5; rep++) {
+    console.log(`Exercise ${exercise}: Lifting weights repetition ${rep} 🏋️‍♀️`);
+  }
 }
