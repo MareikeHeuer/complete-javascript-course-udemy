@@ -514,6 +514,7 @@ TEST DATA: Marks weighs 78 kg and is 1.69 m tall. John weighs 92 kg and is 1.95 
 IMPORTANT: The ** operator is not supported in this editor. Please make sure to use exactly this formula mass / (height * height), and not this one mass / (height ** 2).
 */
 
+/*
 const mark = {
   fullName: 'Mark Miller',
   mass: 78,
@@ -547,4 +548,26 @@ if (mark.bmi > john.bmi) {
   console.log(
     `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`,
   );
+}
+  */
+
+//// ITERATION: THE FOR LOOP ////
+
+/*
+Loops are another control struture 
+Fundamental aspect of every programming language, allow us to perform repetitive tasks
+Eg: Gym, 10 repetitions of certain exercise, can be represented by a loop
+*/
+
+// console.log('Lifting weights repetition 1 🏋️‍♀️');
+// console.log('Lifting weights repetition 2 🏋️‍♀️');
+// console.log('Lifting weights repetition 3 🏋️‍♀️');
+// etc
+
+// Loop has 3 parts
+// 1: Initial value of counter,
+// 2: Logical condition evaluated before each iteration of the loop, loop runs while condition is true
+// 3. Increasing the counter after each iteration
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
 }
