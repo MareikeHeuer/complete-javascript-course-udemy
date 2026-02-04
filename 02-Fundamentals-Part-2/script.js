@@ -636,6 +636,7 @@ for (let i = 0; i < jonas.length; i++) {
 2. Create loop in another loop
 */
 
+/*
 const jonas = [
   'Jonas',
   'Schmedtmann',
@@ -656,4 +657,31 @@ for (let exercise = 1; exercise <= 3; exercise++) {
   for (let rep = 1; rep <= 5; rep++) {
     console.log(`Exercise ${exercise}: Lifting weights repetition ${rep} 🏋️‍♀️`);
   }
+}
+*/
+
+//// THE WHILE LOOP ////
+/*
+
+*/
+
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+}
+
+// Same for the while loop
+let rep = 1;
+while (rep <= 10) {
+  console.log(`WHILE----Lifting weights repetition ${rep} 🏋️‍♀️`);
+  rep++;
+}
+
+// While loop only needs condition to run, Use for cases where counter not necessary
+// Roll the dice until we roll a six
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+  console.log(`You roll a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1; // if we don't reassign, infinite loop
+  if (dice === 6) console.log('Loop is about to end...');
 }
