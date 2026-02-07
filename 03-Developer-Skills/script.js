@@ -94,3 +94,70 @@ INSTEAD
 Use AI as an assistant, not a replacement! 
 Save time on repetitice and boring tasks. It's also great for learning! 
 */
+
+//// CODING CHALLENGE 2, SOLVE WITH AI ////
+
+/*
+ Let's say you're building a time tracking application for freelancers. 
+ At some point in building this app, you need a function that receives daily work hours 
+ for a certain week, and returns:
+ 
+1. Total hours worked
+2. Average daily hours
+3. The day with the most hours worked
+4. Number of days worked
+5. Whether the week was full-time (worked 35 hours or more)
+ 
+ 
+TEST DATA: [7.5, 8, 6.5, 0, 8.5, 4, 0]
+*/
+
+// 1. Understand the problem
+// 2. Choose AI assistant tool, ChatGPT
+
+// TEST DATA
+const testData = [7.5, 8, 6.5, 0, 8.5, 5, 0];
+
+// FUNCTION
+function analyzeWorkWeek(workWeek) {
+  const days = [
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday',
+  ];
+
+  const totalHours = workWeek.reduce((sum, hours) => sum + hours, 0);
+  const roundedTotal = Number(totalHours.toFixed(1));
+
+  const daysWorked = workWeek.filter((hours) => hours > 0).length;
+
+  const averageDailyHours = Number((totalHours / workWeek.length).toFixed(1));
+
+  let maxHours = 0;
+  let maxDayIndex = null;
+
+  workWeek.forEach((hours, index) => {
+    if (hours > maxHours) {
+      maxHours = hours;
+      maxDayIndex = index;
+    }
+  });
+
+  const busiestDay = maxHours > 0 ? days[maxDayIndex] : null;
+  const isFullTime = totalHours >= 35;
+
+  return {
+    totalHours: roundedTotal,
+    averageDailyHours,
+    busiestDay,
+    daysWorked,
+    isFullTime,
+  };
+}
+
+// RUN TEST
+console.log(analyzeWorkWeek(testData));
