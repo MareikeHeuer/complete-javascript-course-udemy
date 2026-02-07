@@ -40,6 +40,7 @@ TEST DATA 1: [17, 21, 23]
 TEST DATA 2: [12, 5, -5, 0, 4]
 */
 
+/*
 // 1. Create arrays with test data
 const data1 = [17, 21, 23];
 const data2 = [12, 5, -5, 0, 4];
@@ -57,3 +58,39 @@ const printForecast = function (arr) {
 
 console.log(printForecast(data1));
 console.log(printForecast(data2));
+*/
+
+//// THE RISE OF AI TOOLS ////
+
+/*
+WORKING WITH AI
+
+1. Make sure you 100% understand the problem. Ask questions to get a clearer picture.
+2. Choose AI and give it very specific prompt and enough context (language, style, etc).
+3. Review and test the output solution. Make sure you introduce no bugs into your app.
+4. Correct or improve the solution.
+5. Abandon the AI if it's not helping.
+
+WHEN SHOULD YOU CHOOSE TO WORK WITH AI?
+
+1. You need to know how to code on your own. Fundamental skills are 100% essential!
+2. You need to be able to solve problems on your own.
+3. You need to have very critical thinking (AI code contains a surprising amount of bugs or bad code)
+4. You need to have curiosity and joy while coding
+
+INCORPORATE AI CODE
+
+1. If you could have written the code yourself
+2. If you truly understand the generated code
+3. If you have ensured the code is 100% correct
+4. WHen you're using the code for mission-critical parts of your app
+
+
+Don't just use AI without knowing what you're doing. 
+Otherwise, AI will turn you into a terrible programmer!
+
+INSTEAD
+
+Use AI as an assistant, not a replacement! 
+Save time on repetitice and boring tasks. It's also great for learning! 
+*/
