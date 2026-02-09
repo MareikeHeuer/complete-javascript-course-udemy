@@ -16,6 +16,7 @@ WHAT IS DOM AND DOM MANIPULATION?
 
 */
 
+/*
 // querySelector() is a method that's available on the document
 console.log(document.querySelector('.message').textContent);
 // Set new content to DOM node
@@ -25,3 +26,15 @@ document.querySelector('.score').textContent = 10;
 
 document.querySelector('.guess').value = 23;
 console.log(document.querySelector('.guess').value);
+*/
+
+// Handling click event with eventListener
+document.querySelector('.check').addEventListener('click', function () {
+  const guess = Number(document.querySelector('.guess').value);
+  console.log(guess, typeof guess);
+
+  // Check if thee is a value
+  if (!guess) {
+    document.querySelector('.message').textContent = 'No number! ⛔️';
+  }
+});
