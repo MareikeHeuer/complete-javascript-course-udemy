@@ -1,8 +1,5 @@
 'use strict';
 
-// querySelector() is a method that's available on the document
-console.log(document.querySelector('.message').textContent);
-
 /*
 WHAT IS DOM AND DOM MANIPULATION?
 
@@ -18,3 +15,13 @@ WHAT IS DOM AND DOM MANIPULATION?
 - APIs are librearies also written in JS, and can interact with JS
 
 */
+
+// querySelector() is a method that's available on the document
+console.log(document.querySelector('.message').textContent);
+// Set new content to DOM node
+document.querySelector('.message').textContent = 'Correct Number 🎉';
+document.querySelector('.number').textContent = 13;
+document.querySelector('.score').textContent = 10;
+
+document.querySelector('.guess').value = 23;
+console.log(document.querySelector('.guess').value);
