@@ -29,8 +29,8 @@ console.log(document.querySelector('.guess').value);
 */
 
 // Define secret number between 1 and 20 otuside of handler function, we need it once
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
-// console.log(secretNumber);
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
+console.log(secretNumber);
 let score = 20;
 
 // Handling click event with eventListener
@@ -48,6 +48,8 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.number').textContent = secretNumber;
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
+
+    // Number is too high
   } else if (guess > secretNumber) {
     if (score > 1) {
       document.querySelector('.message').textContent = 'Too high 📈';
@@ -57,9 +59,9 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.message').textContent = 'You lost the game 💥';
       document.querySelector('.score').textContent = 0;
     }
-  } else if (guess > secretNumber) {
+  } else if (guess < secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent = 'Too high 📈';
+      document.querySelector('.message').textContent = 'Too low 📉';
       score--;
       document.querySelector('.score').textContent = score;
     } else {
@@ -79,3 +81,15 @@ Implement a game rest functionality so that the player can make a new guess! Her
 3. Restore the initial conditions of the message, number, score and guess input field
 4. Also restore the oiginal backgroun color #222 and number width 15 rem
  */
+
+document.querySelector('.again').addEventListener('click', function () {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.score').textContent = score;
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.guess').value = '';
+
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.number').style.width = '15rem';
+});
