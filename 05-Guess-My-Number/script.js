@@ -34,6 +34,22 @@ console.log(secretNumber);
 let score = 20;
 let highscore = 0;
 
+const displayMessage = function (message) {
+  document.querySelector('.message').textContent = message;
+};
+
+const displayScore = function (score) {
+  document.querySelector('.score').textContent = score;
+};
+
+const displayNumber = function (number) {
+  document.querySelector('.number').textContent = number;
+};
+
+function setBodyColor(color) {
+  document.querySelector('body').style.backgroundColor = color;
+}
+
 // Handling click event with eventListener
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
@@ -41,13 +57,13 @@ document.querySelector('.check').addEventListener('click', function () {
 
   // When there is no input
   if (!guess) {
-    document.querySelector('.message').textContent = 'No number! ⛔️';
+    displayMessage('No number! ⛔️');
 
     // Player wins
   } else if (guess === secretNumber) {
-    document.querySelector('.message').textContent = 'Correct Number! 🎉';
-    document.querySelector('.number').textContent = secretNumber;
-    document.querySelector('body').style.backgroundColor = '#60b347';
+    displayMessage('Correct Number! 🎉');
+    displayNumber(secretNumber);
+    setBodyColor('#60b347');
     document.querySelector('.number').style.width = '30rem';
 
     if (score > highscore) {
@@ -55,24 +71,19 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.highscore').textContent = highscore;
     }
 
-    // Number is too high
-  } else if (guess > secretNumber) {
-    if (score > 1) {
-      document.querySelector('.message').textContent = 'Too high 📈';
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = 'You lost the game 💥';
-      document.querySelector('.score').textContent = 0;
-    }
-  } else if (guess < secretNumber) {
-    if (score > 1) {
-      document.querySelector('.message').textContent = 'Too low 📉';
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = 'You lost the game 💥';
-      document.querySelector('.score').textContent = 0;
+    // Number is wrong
+  } else if (guess !== secretNumber) {
+    if (guess !== secretNumber) {
+      if (score > 1) {
+        guess > secretNumber
+          ? displayMessage('Too high 📈')
+          : displayMessage('Too low 📉');
+        score--;
+        displayScore(score);
+      } else {
+        displayMessage('You lost the game 💥');
+        displayScore(0);
+      }
     }
   }
 });
@@ -91,11 +102,10 @@ Implement a game rest functionality so that the player can make a new guess! Her
 document.querySelector('.again').addEventListener('click', function () {
   score = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
-  document.querySelector('.message').textContent = 'Start guessing...';
-  document.querySelector('.score').textContent = score;
-  document.querySelector('.number').textContent = '?';
+  displayMessage('Start guessing...');
+  displayScore(score);
+  displayNumber('?');
   document.querySelector('.guess').value = '';
-
-  document.querySelector('body').style.backgroundColor = '#222';
+  setBodyColor('#222');
   document.querySelector('.number').style.width = '15rem';
 });
