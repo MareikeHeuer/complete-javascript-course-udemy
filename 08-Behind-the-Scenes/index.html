@@ -138,3 +138,162 @@ Prevents blocking during tasks like:
 Core concept for asynchronous JavaScript
 
 -->
+
+<!-- 
+THE JAVASCRIPT ENGINE AND RUNTIME
+
+1. JavaScript Engine
+
+- Definition: A program that executes JavaScript code
+- Every browser has its own engine
+
+Example:
+- Google Chrome → V8 engine
+- Node.js → also uses V8
+
+2. Core Components of the Engine
+
+Call Stack
+- Where JavaScript code is executed
+- Uses execution contexts
+- Runs on a single main thread
+
+Heap
+- Unstructured memory pool
+- Stores objects and data needed by the application
+
+3. Compilation vs Interpretation
+
+Compilation
+- Entire source code converted to machine code at once
+- Machine code stored in a portable file
+- Execution happens after compilation
+- Faster performance
+
+Interpretation
+- Code executed line by line
+- Translation to machine code happens right before execution
+- No separate compilation step
+- Slower than compiled languages
+
+4. Just-In-Time (JIT) Compilation
+
+- Modern JavaScript uses JIT compilation
+- Mix of compilation and interpretation
+
+Process:
+- Entire code compiled into machine code
+- Executed immediately
+- No portable file created
+- Much faster than pure interpretation
+- Required for modern web apps performance
+
+5. How JavaScript Code Runs (Inside the Engine)
+
+Step 1: Parsing
+- Engine reads the source code
+- Converts it into an Abstract Syntax Tree (AST)
+- Breaks code into meaningful pieces (keywords, variables, etc.)
+- Checks for syntax errors
+- AST is NOT related to the DOM
+
+Step 2: Compilation
+- AST converted into machine code
+- Done using JIT compilation
+- Machine code executed immediately
+- Execution happens in the call stack
+
+6. Engine Optimization
+
+- Engine first creates unoptimized machine code
+- Starts execution immediately
+
+In background:
+- Code is optimized
+- Recompiled with better performance
+- Optimized code replaces unoptimized code
+- Happens without stopping execution
+- Optimization runs in special internal threads (not accessible to developers)
+
+7. What is a Runtime?
+
+A container that includes:
+- JavaScript engine
+- Additional features needed to run JavaScript
+- Engine alone is not enough
+
+Runtime = Engine + Extra APIs + Event System
+
+8. Browser Runtime Structure
+Includes:
+
+1. JavaScript Engine
+- Call stack
+- Heap
+
+2. Web APIs
+Provided by the browser (not JavaScript itself)
+
+Examples:
+- DOM
+- Timers (setTimeout)
+- console.log
+
+Accessible through the global window object
+
+3. Callback Queue
+- Data structure storing callback functions
+- Holds functions ready to execute
+
+Example:
+- Event handlers
+- Timer callbacks
+
+4. Event Loop
+Monitors call stack and callback queue
+
+If call stack is empty:
+- Moves callback from queue to stack
+- Enables non-blocking behavior
+- Core part of JavaScript concurrency model
+
+9. How Event Handling Works
+
+- Event occurs (e.g., button click)
+- Callback function placed in callback queue
+
+If call stack is empty:
+- Event loop moves callback to call stack
+- Callback function executes
+
+10. Node.js Runtime
+Similar structure to browser runtime
+
+Differences:
+- No Web APIs (no browser)
+- Uses C++ bindings
+- Includes a thread pool
+- Shows JavaScript can run outside the browser
+
+Big Picture Summary
+Engine
+- Executes JavaScript
+
+Contains:
+- Call stack
+- Heap
+
+Uses:
+- Parsing → AST
+- JIT compilation
+- Background optimization
+- Runtime
+- Engine + APIs + Event Loop
+
+Browser runtime includes:
+- Web APIs
+- Callback queue
+- Event loop
+
+Enables asynchronous, non-blocking JavaScrip
+-->
