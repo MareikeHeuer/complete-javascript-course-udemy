@@ -29,3 +29,112 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+<!-- 
+A HIGH LEVEL OVERVIEW OF JAVASCRIPT
+
+JavaScript — High-Level Overview (Study Notes)
+1. Definition
+
+High-level
+Prototype-based
+Object-oriented
+Multi-paradigm
+Interpreted / Just-in-time compiled
+Dynamic (dynamically typed)
+Single-threaded
+Garbage-collected
+First-class functions
+Non-blocking event loop concurrency model
+
+2. High-Level Language
+
+- Does not require manual memory or CPU management
+- Uses abstractions to simplify development
+- Easier to learn and use than low-level languages (e.g., C)
+- Trade-off: less performance optimization than low-level languages
+
+3. Garbage Collection
+
+- Automatic memory management by the JavaScript engine
+- Removes unused objects from memory
+- Prevents memory leaks
+- Developers do not manually free memory
+
+4. Interpreted / Just-in-Time Compiled
+
+- All programs must be converted to machine code (0s and 1s)
+- JavaScript code is human-readable abstraction
+- Translation happens inside the JavaScript engine
+- Uses interpretation and/or JIT compilation
+
+5. Multi-Paradigm Language
+
+- Supports multiple programming paradigms:
+
+Procedural programming
+- Linear code execution
+- Functions for organization
+
+Object-Oriented Programming (OOP)
+- Code structured around objects
+
+Functional Programming (FP)
+- Functions as core units
+- Can be imperative or declarative
+
+Developer chooses paradigm(s)
+
+6. Prototype-Based Object-Oriented Programming
+- Almost everything is an object
+- Exceptions: primitive values (numbers, strings, booleans, etc.)
+- Objects are created from prototypes (blueprints)
+- Objects inherit methods from their prototype
+- Example: arrays inherit methods like .push()
+- Uses prototypal inheritance
+
+7. First-Class Functions
+- Functions are treated like variables
+
+Functions can:
+- Be stored in variables
+- Be passed as arguments
+- Be returned from other functions
+
+Enables functional programming techniques
+- Used in callbacks (e.g., event listeners)
+
+8. Dynamic Typing
+- No explicit data types assigned to variables
+- Types determined at runtime
+- Variable types can change during execution
+
+Contrast:
+- Statically typed languages require explicit types
+
+Optional alternative: TypeScript (adds static typing)
+
+9. Single-Threaded & Event Loop
+- JavaScript runs on a single thread
+- Can only execute one task at a time
+- Concurrency handled via the event loop
+
+Long-running tasks:
+- Executed in the background
+- Returned to the main thread when complete
+- Enables non-blocking behavior
+
+10. Concurrency Model
+- Describes how JavaScript handles multiple tasks
+
+Uses:
+- Single thread
+- Non-blocking event loop
+
+Prevents blocking during tasks like:
+- Data fetching
+- Timers
+
+Core concept for asynchronous JavaScript
+
+-->
