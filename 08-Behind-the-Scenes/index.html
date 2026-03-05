@@ -297,3 +297,204 @@ Browser runtime includes:
 
 Enables asynchronous, non-blocking JavaScrip
 -->
+
+<!-- 
+EXECUTION CONTEXTS AND THE CALL STACK 
+
+1. How JavaScript Code Executes
+- JavaScript code runs inside the JavaScript engine
+- Execution happens in the call stack
+
+Before execution:
+- Code is compiled
+- Then execution begins
+
+2. Global Execution Context
+- Created when JavaScript starts running
+- Executes top-level code
+
+Top-Level Code
+- Code not inside any function
+- Runs immediately when the program starts
+
+Key Rule
+- There is only one global execution context in a program
+
+Functions
+- Functions are declared during top-level execution
+- Code inside functions runs only when the function is called
+
+3. Execution Context
+- Environment where JavaScript code runs
+- Contains all information needed to execute code
+
+Characteristics
+- JavaScript code always runs inside an execution context
+
+Created for:
+- Global code
+- Each function call
+
+4. Types of Execution Contexts
+
+Global Execution Context
+- Created automatically
+- Runs top-level code
+- Exists for the lifetime of the program
+
+Function Execution Context
+- Created every time a function is called
+- Each function call gets its own context
+
+Method Execution Context
+- Methods are functions attached to objects
+- Also create execution contexts
+
+5. Execution Context Components
+Each execution context contains three main parts.
+
+1. Variable Environment
+Stores:
+- Variables
+- Function declarations
+- Array-like object
+- Arguments object
+Contains arguments passed into a function
+
+Example:
+
+function test(a, b) {}
+test(7, 9)
+
+Arguments object:
+
+[7, 9]
+
+2. Scope Chain
+- Provides access to variables outside the current function
+- Links execution contexts together
+- Enables variable lookup in outer scopes
+
+Example concept:
+
+function outer() {
+   let a = 10
+   function inner() {
+       console.log(a)
+   }
+}
+
+inner() can access a because of the scope chain.
+
+3. this Keyword
+- Special variable in each execution context
+- Refers to the object calling the function
+- Value determined at runtime
+
+6. Creation Phase
+Before execution begins:
+- Execution context is created and initialized.
+
+During creation phase:
+- Variables are registered
+- Functions are stored
+- Scope chain is established
+- this keyword is determined
+
+Execution happens after the creation phase.
+
+7. Arrow Functions Exception
+Arrow functions do not have their own:
+- this
+- arguments object
+
+Instead they inherit these from the closest parent function.
+
+8. The Call Stack
+- Structure where execution contexts are stored
+- Works using Last In First Out (LIFO) principle
+
+Purpose
+- Tracks the order of function execution
+
+9. Call Stack Behavior
+When JavaScript starts:
+-Global execution context is pushed onto the stack
+
+When a function is called
+- New execution context is created
+- Pushed onto the call stack
+
+When a function finishes
+- Its execution context is removed (popped) from the stack
+- Control returns to the previous context
+
+10. Execution Flow Example
+
+Step 1 
+- Program starts
+- Call stack:
+- Global Execution Context
+
+Step 2
+- Function is called
+Call stack:
+- Function Execution Context
+- Global Execution Context
+
+Step 3
+Another function is called inside
+Call stack:
+- Second Function Context
+- First Function Context
+- Global Context
+
+Step 4
+Second function returns
+Call stack:
+- First Function Context
+- Global Context
+
+Step 5
+First function returns
+Call stack:
+- Global Context
+
+11. Single Thread Behavior
+- JavaScript has one thread
+- Only one execution context runs at a time
+
+When a function is called:
+- Current function pauses
+- New function executes
+- Execution continues only after the called function returns.
+
+12. Program End
+- Global execution context remains active while program runs
+
+Removed only when:
+- Browser tab closes
+- Program completely finishes
+
+Key Concepts Summary
+Execution Context
+- Environment where JavaScript code runs.
+
+Global Execution Context
+- Handles top-level code.
+
+Function Execution Context
+- Created for every function call.
+
+Call Stack
+- Structure that tracks execution order of contexts.
+
+Components of Execution Context
+- Variable Environment
+- Scope Chain
+- this keyword
+
+Arrow Function Difference
+- No own this
+- No own arguments
+-->
