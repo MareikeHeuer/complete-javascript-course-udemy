@@ -498,3 +498,317 @@ Arrow Function Difference
 - No own this
 - No own arguments
 -->
+
+<!-- 
+SCOPE AND THE SCOPE CHAIN
+
+1. What is Scoping?
+Scoping controls how variables are organized and accessed in JavaScript.
+
+It answers two questions:
+- Where do variables live?
+- Where can variables be accessed?
+
+2. Lexical Scoping
+JavaScript uses lexical scoping.
+
+Lexical scoping:
+- Variable access depends on where functions and blocks are written in the code.
+
+Example:
+
+function outer() {
+  let a = 10;
+
+  function inner() {
+    console.log(a);
+  }
+}
+
+- inner() can access a
+- Because inner is written inside outer
+- Access is determined by code structure, not execution order.
+
+3. What is Scope?
+Scope is the environment where a variable is declared.
+
+For functions:
+- Scope is essentially the variable environment inside the execution context
+
+4. Scope of a Variable
+The scope of a variable is the entire region of code where that variable can be accessed.
+
+5. Types of Scope in JavaScript
+JavaScript has three types of scope:
+- Global Scope
+- Function Scope
+- Block Scope
+
+6. Global Scope
+Variables declared outside any function or block.
+
+Example:
+const name = "Jonas";
+
+-Characteristics
+-Accessible everywhere
+-Available in all functions and blocks
+-These are called global variables.
+
+7. Function Scope
+Every function creates its own scope.
+
+Example:
+
+function calcAge() {
+  const now = 2037;
+}
+Rules
+
+- Variables inside a function are local
+- They cannot be accessed outside the function
+
+Example:
+
+function calcAge() {
+  const now = 2037;
+}
+
+console.log(now); // ReferenceError
+8. Block Scope
+
+Introduced in ES6.
+
+Blocks are code inside { }.
+
+Examples:
+- if statements
+- for loops
+- standalone blocks
+
+Example:
+
+if (true) {
+  const age = 30;
+}
+Rules
+
+Variables declared with:
+- let
+- const
+are block scoped.
+They only exist inside the block.
+
+9. var vs let / const
+var:
+- Function scoped
+- Ignores blocks
+
+Example:
+
+if (true) {
+  var age = 30;
+}
+
+console.log(age); // Works
+let and const
+
+Block scoped:
+
+Example:
+
+if (true) {
+  const age = 30;
+}
+
+console.log(age); // Error
+10. Functions and Scope
+
+All function types create scope:
+- Function declarations
+- Function expressions
+- Arrow functions
+
+Example:
+
+function a() {}
+const b = function() {};
+const c = () => {};
+
+Each creates its own scope.
+
+11. The Scope Chain
+Every scope has access to variables from all outer (parent) scopes.
+This connection between scopes is called the scope chain.
+
+12. How Variable Lookup Works
+When JavaScript tries to access a variable:
+
+- Check current scope
+- If not found → check parent scope
+- Continue up the chain
+- Stop at global scope
+
+If the variable still isn't found → ReferenceError
+This process is called variable lookup.
+
+13. Scope Chain Example
+
+const myName = "Jonas";
+
+function first() {
+  const age = 30;
+
+  function second() {
+    const job = "teacher";
+    console.log(myName, age, job);
+  }
+
+  second();
+}
+
+Scope structure:
+
+Global Scope
+   ↓
+first() Scope
+   ↓
+second() Scope
+
+second() can access:
+
+job (local)
+
+age (parent scope)
+
+myName (global scope)
+
+14. Scope Chain Rule
+Scopes can access:
+- Their own variables
+- Variables in outer scopes
+- Scopes cannot access inner scopes.
+
+Example:
+
+Global
+   ↓
+Function A
+   ↓
+Function B
+
+Function A cannot access variables in Function B.
+
+Scope lookup works upwards only.
+
+15. Block Scope Example
+function first() {
+
+  const age = 30;
+
+  if (age >= 30) {
+    const decade = 3;
+    var millennial = true;
+  }
+
+}
+Result
+
+- decade
+- Block scoped
+
+Only inside if
+- millennial
+
+Declared with var
+- Belongs to function scope
+
+16. Sibling Scopes
+Scopes that are not nested inside each other cannot access each other's variables.
+
+Example structure:
+
+Function A
+   ├── Block 1
+   └── Function B
+
+Block 1 and Function B cannot access each other's variables.
+
+They are siblings.
+
+17. Global Variables
+Variables declared in global scope:
+- Are available everywhere
+- Always at the top of the scope chain
+
+Example:
+
+const appName = "MyApp";
+
+Accessible from any function.
+
+18. Scope Chain vs Call Stack
+These are different concepts.
+
+Call Stack
+- Tracks function execution order.
+
+Example:
+
+third()
+second()
+first()
+global()
+Scope Chain
+
+Tracks variable accessibility based on code structure.
+Determined by where functions are written, not by execution order.
+
+19. Important Rule
+
+Scope chain depends on:
+
+✔ Where functions are written
+❌ Not where functions are called
+
+20. Example Showing the Difference
+function first() {
+  function second() {
+    third();
+  }
+}
+
+function third() {
+  console.log(a);
+}
+
+Even if second() calls third():
+
+third() cannot access variables inside second()
+
+Because it was not written inside it.
+
+21. Key Concepts Summary
+Scoping:
+Determines where variables live and can be accessed.
+
+Types of Scope
+- Scope Type	Description
+- Global Scope	Variables accessible everywhere
+- Function Scope	Variables inside functions
+- Block Scope	Variables inside {} blocks
+- Block Scope Variables
+- Keyword	Scope
+- let	Block
+- const	Block
+- var	Function
+- Scope Chain
+
+Scopes can access outer scopes
+Variable lookup moves upwards
+Inner scopes are not accessible
+
+Important Rule
+Scope chain depends on lexical structure of the code, not function call order.
+
+-->
